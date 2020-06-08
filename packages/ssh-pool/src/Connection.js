@@ -301,6 +301,7 @@ class Connection {
       key: this.options.key,
       strict: this.options.strict,
       tty: this.options.tty,
+      configFile: this.options.configFile,
       extraSshOptions: this.remote.extraSshOptions,
       verbosityLevel: this.options.verbosityLevel,
       remote: formatRemote(this.remote),

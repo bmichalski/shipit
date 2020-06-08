@@ -12,6 +12,7 @@ export function formatSshCommand({
   remote,
   cwd,
   command,
+  configFile,
   extraSshOptions,
   verbosityLevel,
 }) {
@@ -34,6 +35,7 @@ export function formatSshCommand({
   if (tty) args = [...args, '-tt']
   if (port) args = [...args, '-p', port]
   if (key) args = [...args, '-i', key]
+  if (configFile) args = [...args, '-F', configFile]
   if(extraSshOptions && typeof extraSshOptions === 'object') {
     Object.keys(extraSshOptions).forEach((sshOptionsKey) => {
       args = [...args, '-o', `${sshOptionsKey}=${extraSshOptions[sshOptionsKey]}`]
